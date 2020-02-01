@@ -41,35 +41,35 @@ const ActionItemLayout = ({store}) => {
 
   return (
     <Container>
-      <h1 className="text-center">
-        TODO List
-      </h1>
+      <Row className="justify-content-center">
+        <Col xs="auto">
+          <h1 className="text-center">
+            TODO List
+          </h1>
+        </Col>
+      </Row>
       <Row>
         <Col>
-          <Button onClick={clickExport} className="noprint mb-3">
+          <Button onClick={clickExport} className="d-print-none mb-3">
             Export JSON
           </Button>
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <Form onSubmit={submitAddItem} className="">
-            <Form.Row className="noprint">
-              <Col xs={10}>
-                <Form.Group>
-                  <Form.Control name="newItem" ref={newItemRef}/>
-                </Form.Group>
-              </Col>
-              <Col xs={2}>
-                <Button type="submit">
-                  Add Item
-                </Button>
-              </Col>
-            </Form.Row>
-            <ActionItemList store={store} />
-          </Form>
-        </Col>
-      </Row>
+      <Form onSubmit={submitAddItem} className="">
+        <Form.Row className="d-print-none">
+          <Col xs={10}>
+            <Form.Group>
+              <Form.Control name="newItem" ref={newItemRef}/>
+            </Form.Group>
+          </Col>
+          <Col xs={2}>
+            <Button type="submit">
+              Add Item
+            </Button>
+          </Col>
+        </Form.Row>
+        <ActionItemList store={store} />
+      </Form>
     </Container>
   );
 }
@@ -79,25 +79,25 @@ const ActionItemList = ({store}) => (
     {store.getState().items ?
       store.getState().items.map((e, i) => (
         <Form.Row key={i.toString()} className={e.done ? "font-weight-light" : ""}>
-          <Col className="noprint">
+          <Col className="d-print-none">
             <Button size="sm" variant="secondary" onClick={() => store.dispatch(makeTop(i))} disabled={e.done}>
               Top
             </Button>
           </Col>
-          <Col className="noprint">
+          <Col className="d-print-none">
             <Button size="sm" variant="secondary" onClick={() => store.dispatch(deleteItem(i))} disabled={!e.done}>
               Delete
             </Button>
           </Col>
-          <Col className="noprint">
+          <Col className="d-print-none">
             <Form.Group>
               <Form.Check type="checkbox" checked={e.done} id={"done_" + i} onChange={(e) => store.dispatch(changeDone(i, e.target.checked))} label="Done" />
             </Form.Group>
           </Col>
-          <Col xs={6} md={8} className="noprint">
+          <Col xs={6} md={8} className="d-print-none">
             {e.description}
           </Col>
-          <Col xs={true} className="printonly">
+          <Col xs={true} className="d-none d-print-block">
             {e.description}
           </Col>
         </Form.Row>

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 //import { C, items } from './actions';
 import { items } from './actions';
-import sampleState from './sampleState.json';
+import sampleState from './sampleStateMPB.json';
 import ActionItemManagerRedux from './action-item-manager-redux';
 
 //const STORAGE_KEY = 'action-item-manager-state';

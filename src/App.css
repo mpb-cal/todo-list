@@ -1,16 +1,4 @@
 
-@media print {
-  .noprint {
-    display: none;
-  }
-}
-
-@media not print {
-  .printonly {
-    display: none;
-  }
-}
-
 button[disabled]:hover {
   cursor: default;
 }
