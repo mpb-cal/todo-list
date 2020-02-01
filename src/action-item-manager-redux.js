@@ -31,6 +31,9 @@ const ActionItemLayout = ({store}) => {
     saveAs(blob, "action-item-manager-state.json");
   }
 
+  const clickImport = () => {
+  }
+
   const submitAddItem = (e) => {
     e.preventDefault();
     store.dispatch(addItem(newItemRef.current.value));
@@ -49,6 +52,9 @@ const ActionItemLayout = ({store}) => {
           <Button onClick={clickExport} className="noprint mb-3">
             Export JSON
           </Button>
+          <p>
+            Import JSON: <Form.Control type="file" className="noprint mb-3" />
+          </p>
         </Col>
       </Row>
       <Row>

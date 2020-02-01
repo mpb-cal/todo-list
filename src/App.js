@@ -21,7 +21,8 @@ function App() {
 
   const store = createStore(
     combineReducers({items}),
-    JSON.parse(localStorage.getItem(STORAGE_KEY_REDUX)) || sampleState
+      JSON.parse(localStorage.getItem(STORAGE_KEY_REDUX)) || 
+      sampleState
   );
 
   store.subscribe(() => {
