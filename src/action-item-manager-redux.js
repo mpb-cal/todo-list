@@ -57,7 +57,7 @@ const ActionItemLayout = ({store}) => {
             Export JSON
           </Button>
           <p>
-            Import JSON: <Form.Control type="file" className="noprint mb-3" />
+            Import JSON: <Form.Control type="file" className="mb-3" />
           </p>
         </Col>
       </Row>
