@@ -49,19 +49,16 @@ const ActionItemLayout = ({store}) => {
           <h1 className="text-center">
             TODO List
           </h1>
-          <Button onClick={clickExport} className="noprint mb-3">
+        </Col>
+      </Row>
+      <Row className="d-print-none">
+        <Col>
+          <Button onClick={clickExport} className="mb-3">
             Export JSON
           </Button>
           <p>
-            Import JSON: <Form.Control type="file" className="noprint mb-3" />
+            Import JSON: <Form.Control type="file" className="mb-3" />
           </p>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Button onClick={clickExport} className="d-print-none mb-3">
-            Export JSON
-          </Button>
         </Col>
       </Row>
       <Form onSubmit={submitAddItem} className="">
