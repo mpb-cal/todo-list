@@ -6,6 +6,7 @@ const C = {
   MAKE_TOP: 'MAKE_TOP',
   CHANGE_DONE: 'CHANGE_DONE',
   DELETE_ITEM: 'DELETE_ITEM',
+  IMPORT_ITEMS: 'IMPORT_ITEMS',
 };
 
 // reducers (state + action = new state)
@@ -39,6 +40,8 @@ export const items = (state = [], action) => {
         ];
       }
       return state;
+    case C.IMPORT_ITEMS:
+      return action.items;
     default:
       return state;
   }
@@ -85,6 +88,13 @@ export const makeTop = (index) => (
   {
     type: C.MAKE_TOP,
     index,
+  }
+)
+
+export const importItems = (items) => (
+  {
+    type: C.IMPORT_ITEMS,
+    items,
   }
 )
 

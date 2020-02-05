@@ -6,7 +6,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { changeDone, deleteItem, addItem, makeTop } from './actions';
+import { changeDone, deleteItem, addItem, makeTop, importItems } from './actions';
+import FormGroup from 'react-bootstrap/FormGroup';
 
 export default class ActionItemManagerRedux extends React.Component {
   constructor(props) {
@@ -31,14 +32,32 @@ const ActionItemLayout = ({store}) => {
     saveAs(blob, "action-item-manager-state.json");
   }
 
-  const clickImport = () => {
-  }
-
   const submitAddItem = (e) => {
     e.preventDefault();
     store.dispatch(addItem(newItemRef.current.value));
     newItemRef.current.value = '';
   }
+
+  const changeChooseFile = (e) => {
+    let files = e.target.files;
+    if (files.length > 0) {
+      let file = files[0];
+      if (typeof file !== 'undefined') {
+        let reader = new FileReader();
+        reader.readAsText(file);
+        reader.onloadend = function () {
+          console.log(reader.result);
+          let data = JSON.parse(reader.result);
+          if (data.items !== 'undefined') {
+            let items = data.items;
+            console.log(data.items);
+            store.dispatch(importItems(items));
+          }
+        };
+      }
+    }
+  }
+
 
   let newItemRef = React.createRef();
 
@@ -56,9 +75,18 @@ const ActionItemLayout = ({store}) => {
           <Button onClick={clickExport} className="mb-3">
             Export JSON
           </Button>
-          <p>
-            Import JSON: <Form.Control type="file" className="mb-3" />
-          </p>
+          <Form className="">
+            <Form.Row>
+              <FormGroup>
+                <Col>
+                  Import JSON:
+                </Col>
+                <Col>
+                  <Form.Control type="file" className="mb-3" onChange={changeChooseFile} />
+                </Col>
+              </FormGroup>
+            </Form.Row>
+          </Form>
         </Col>
       </Row>
       <Form onSubmit={submitAddItem} className="">
