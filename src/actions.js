@@ -4,6 +4,8 @@
 const C = {
   ADD_ITEM: 'ADD_ITEM',
   MAKE_TOP: 'MAKE_TOP',
+  MOVE_UP: ' MOVE_UP',
+  MOVE_DOWN: 'MOVE_DOWN',
   CHANGE_DONE: 'CHANGE_DONE',
   DELETE_ITEM: 'DELETE_ITEM',
   IMPORT_ITEMS: 'IMPORT_ITEMS',
@@ -29,6 +31,24 @@ export const items = (state = [], action) => {
         state[action.index], 
         ...state.slice(0, action.index), 
         ...state.slice(action.index + 1)
+      ];
+    case C.MOVE_UP:
+      return [
+        ...state.slice(0, action.index - 1), 
+        state[action.index], 
+        state[action.index - 1], 
+        ...state.slice(action.index + 1)
+      ];
+    case C.MOVE_DOWN:
+      if (action.index >= state.length - 1) {
+        return state;
+      }
+
+      return [
+        ...state.slice(0, action.index), 
+        state[action.index + 1], 
+        state[action.index], 
+        ...state.slice(action.index + 2)
       ];
     case C.CHANGE_DONE:
       state[action.index] = item(state[action.index], action);
@@ -87,6 +107,20 @@ export const changeDone = (index, done) => (
 export const makeTop = (index) => (
   {
     type: C.MAKE_TOP,
+    index,
+  }
+)
+
+export const moveUp = (index) => (
+  {
+    type: C.MOVE_UP,
+    index,
+  }
+)
+
+export const moveDown = (index) => (
+  {
+    type: C.MOVE_DOWN,
     index,
   }
 )

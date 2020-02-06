@@ -6,8 +6,10 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { changeDone, deleteItem, addItem, makeTop, importItems } from './actions';
+import { changeDone, deleteItem, addItem, makeTop, importItems, moveUp, moveDown } from './actions';
 import FormGroup from 'react-bootstrap/FormGroup';
+
+const EXPORT_JSON_NAME = "action-item-manager-state.json";
 
 export default class ActionItemManagerRedux extends React.Component {
   constructor(props) {
@@ -29,7 +31,7 @@ const ActionItemLayout = ({store}) => {
       [JSON.stringify({items: store.getState().items})], 
       {type: "text/plain;charset=utf-8"}
     );
-    saveAs(blob, "action-item-manager-state.json");
+    saveAs(blob, EXPORT_JSON_NAME);
   }
 
   const submitAddItem = (e) => {
@@ -111,30 +113,8 @@ const ActionItemLayout = ({store}) => {
 const ActionItemList = ({store}) => (
   <>
     {store.getState().items ?
-      store.getState().items.map((e, i) => (
-        <Form.Row key={i.toString()} className={e.done ? "font-weight-light" : ""}>
-          <Col className="d-print-none">
-            <Button size="sm" variant="secondary" onClick={() => store.dispatch(makeTop(i))} disabled={e.done}>
-              Top
-            </Button>
-          </Col>
-          <Col className="d-print-none">
-            <Button size="sm" variant="secondary" onClick={() => store.dispatch(deleteItem(i))} disabled={!e.done}>
-              Delete
-            </Button>
-          </Col>
-          <Col className="d-print-none">
-            <Form.Group>
-              <Form.Check type="checkbox" checked={e.done} id={"done_" + i} onChange={(e) => store.dispatch(changeDone(i, e.target.checked))} label="Done" />
-            </Form.Group>
-          </Col>
-          <Col xs={6} md={8} className="d-print-none">
-            {e.description}
-          </Col>
-          <Col xs={true} className="d-none d-print-block">
-            {e.description}
-          </Col>
-        </Form.Row>
+      store.getState().items.map((e, i, a) => (
+        <ActionItem key={i.toString()} store={store} item={e} idx={i} />
       ))
     :
       "No Items"
@@ -142,3 +122,30 @@ const ActionItemList = ({store}) => (
   </>
 );
 
+const ActionItem = ({store, item, idx}) => (
+  <Form.Row className={item.done ? "font-weight-light" : ""}>
+    <ActionButton store={store} item={item} text="Top" action={makeTop(idx)} disabled={item.done || idx < 1} />
+    <ActionButton store={store} item={item} text="Up" action={moveUp(idx)} disabled={item.done || idx < 1} />
+    <ActionButton store={store} item={item} text="Down" action={moveDown(idx)} disabled={item.done} />
+    <ActionButton store={store} item={item} text="Delete" action={deleteItem(idx)} disabled={!item.done} />
+    <Col className="d-print-none">
+      <Form.Group>
+        <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => store.dispatch(changeDone(idx, e.target.checked))} label="Done" />
+      </Form.Group>
+    </Col>
+    <Col xs={6} md={8} className="d-print-none">
+      {item.description}
+    </Col>
+    <Col xs={true} className="d-none d-print-block">
+      {item.description}
+    </Col>
+  </Form.Row>
+);
+
+const ActionButton = ({store, item, text, action, disabled}) => (
+  <Col className="d-print-none">
+    <Button size="sm" variant="secondary" onClick={() => store.dispatch(action)} disabled={disabled}>
+     {text}
+    </Button>
+  </Col>
+);
