@@ -10,6 +10,7 @@ const C = {
   DELETE_ITEM: 'DELETE_ITEM',
   IMPORT_ITEMS: 'IMPORT_ITEMS',
   CLEAR_MOVE: 'CLEAR_MOVE',
+  CLEAR_NEW: 'CLEAR_NEW',
 };
 
 // reducers (state + action = new state)
@@ -82,6 +83,9 @@ export const items = (state = [], action) => {
       state[index] = item(state[index], action);
       return state;
 
+    case C.CLEAR_NEW:
+      return state.map((e) => item(e, action));
+
     case C.IMPORT_ITEMS:
       return action.items;
 
@@ -114,6 +118,12 @@ export const item = (state = {}, action) => {
       return {
         ...state,
         justMoved: false,
+        isNew: false,
+      };
+
+    case C.CLEAR_NEW:
+      return {
+        ...state,
         isNew: false,
       };
 
@@ -179,6 +189,12 @@ export const clearMove = (id) => (
   {
     type: C.CLEAR_MOVE,
     id,
+  }
+)
+
+export const clearNew = () => (
+  {
+    type: C.CLEAR_NEW,
   }
 )
 

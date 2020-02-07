@@ -4,11 +4,11 @@ button[disabled]:hover {
 }
 
 .new {
-  background-color: aquamarine;
+  background-color: lightgreen;
 }
 
 .justMoved {
-  background-color: lightgreen;
+  background-color: aquamarine;
 }
 
 .actionItemRow:hover {

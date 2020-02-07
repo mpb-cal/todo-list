@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { changeDone, deleteItem, addItem, makeTop, importItems, moveUp, moveDown, clearMove } from './actions';
+import { changeDone, deleteItem, addItem, makeTop, importItems, moveUp, moveDown, clearMove, clearNew } from './actions';
 import FormGroup from 'react-bootstrap/FormGroup';
 
 const EXPORT_JSON_NAME = "action-item-manager-state.json";
@@ -37,6 +37,7 @@ const ActionItemLayout = ({store}) => {
   const submitAddItem = (e) => {
     e.preventDefault();
     store.dispatch(addItem(newItemRef.current.value));
+    setTimeout(() => {store.dispatch(clearNew())}, 1000);
     newItemRef.current.value = '';
   }
 
@@ -94,11 +95,11 @@ const ActionItemLayout = ({store}) => {
         <Form.Row className="d-print-none">
           <Col xs={10}>
             <Form.Group>
-              <Form.Control name="newItem" ref={newItemRef}/>
+              <Form.Control name="newItem" ref={newItemRef} />
             </Form.Group>
           </Col>
           <Col xs={2}>
-            <Button type="submit">
+            <Button type="submit" >
               Add Item
             </Button>
           </Col>
