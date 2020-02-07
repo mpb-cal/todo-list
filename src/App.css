@@ -3,3 +3,14 @@ button[disabled]:hover {
   cursor: default;
 }
 
+.new {
+  background-color: aquamarine;
+}
+
+.justMoved {
+  background-color: lightgreen;
+}
+
+.actionItemRow:hover {
+  background-color: #ddd;
+}

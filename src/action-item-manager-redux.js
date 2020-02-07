@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { changeDone, deleteItem, addItem, makeTop, importItems, moveUp, moveDown } from './actions';
+import { changeDone, deleteItem, addItem, makeTop, importItems, moveUp, moveDown, clearMove } from './actions';
 import FormGroup from 'react-bootstrap/FormGroup';
 
 const EXPORT_JSON_NAME = "action-item-manager-state.json";
@@ -59,7 +59,6 @@ const ActionItemLayout = ({store}) => {
       }
     }
   }
-
 
   let newItemRef = React.createRef();
 
@@ -123,14 +122,14 @@ const ActionItemList = ({store}) => (
 );
 
 const ActionItem = ({store, item, idx}) => (
-  <Form.Row className={item.done ? "font-weight-light" : ""}>
-    <ActionButton store={store} item={item} text="Top" action={makeTop(idx)} disabled={item.done || idx < 1} />
-    <ActionButton store={store} item={item} text="Up" action={moveUp(idx)} disabled={item.done || idx < 1} />
-    <ActionButton store={store} item={item} text="Down" action={moveDown(idx)} disabled={item.done} />
-    <ActionButton store={store} item={item} text="Delete" action={deleteItem(idx)} disabled={!item.done} />
+  <Form.Row className={"actionItemRow " + (item.done ? "font-weight-light" : "") + (item.isNew ? " new" : "") + (item.justMoved ? " justMoved" : "")} >
+    <ActionButton store={store} item={item} text="Top" action={makeTop(item.id)} disabled={item.done || idx < 1} />
+    <ActionButton store={store} item={item} text="Up" action={moveUp(item.id)} disabled={item.done || idx < 1} />
+    <ActionButton store={store} item={item} text="Down" action={moveDown(item.id)} disabled={item.done} />
+    <ActionButton store={store} item={item} text="Delete" action={deleteItem(item.id)} disabled={!item.done} />
     <Col className="d-print-none">
       <Form.Group>
-        <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => store.dispatch(changeDone(idx, e.target.checked))} label="Done" />
+        <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => store.dispatch(changeDone(item.id, e.target.checked))} label="Done" />
       </Form.Group>
     </Col>
     <Col xs={6} md={8} className="d-print-none">
@@ -142,10 +141,16 @@ const ActionItem = ({store, item, idx}) => (
   </Form.Row>
 );
 
+const clickActionButton = (store, action, item) => {
+  store.dispatch(action);
+  setTimeout(() => {store.dispatch(clearMove(item.id))}, 1000);
+}
+
 const ActionButton = ({store, item, text, action, disabled}) => (
   <Col className="d-print-none">
-    <Button size="sm" variant="secondary" onClick={() => store.dispatch(action)} disabled={disabled}>
+    <Button size="sm" variant="secondary" onClick={() => clickActionButton(store, action, item)} disabled={disabled}>
      {text}
     </Button>
   </Col>
 );
+
