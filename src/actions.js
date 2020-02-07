@@ -9,71 +9,124 @@ const C = {
   CHANGE_DONE: 'CHANGE_DONE',
   DELETE_ITEM: 'DELETE_ITEM',
   IMPORT_ITEMS: 'IMPORT_ITEMS',
+  CLEAR_MOVE: 'CLEAR_MOVE',
+  CLEAR_NEW: 'CLEAR_NEW',
 };
 
 // reducers (state + action = new state)
 
+// state refers to items[]
 export const items = (state = [], action) => {
+  let index = state.findIndex((e) => (e.id == action.id));
+
   switch (action.type) {
+
     case C.ADD_ITEM:
+      let newItem = {
+        description: action.description,
+        done: action.done,
+        isNew: true,
+      };
+
       return [
-        {
-          description: action.description,
-          done: action.done
-        },
+        newItem,
         ...state
       ];
+
     case C.DELETE_ITEM:
-      state.splice(action.index, 1);
+      state.splice(index, 1);
       return state;
+
     case C.MAKE_TOP:
+
       return [
-        state[action.index], 
-        ...state.slice(0, action.index), 
-        ...state.slice(action.index + 1)
+        item(state[index], action),
+        ...state.slice(0, index), 
+        ...state.slice(index + 1)
       ];
+
     case C.MOVE_UP:
       return [
-        ...state.slice(0, action.index - 1), 
-        state[action.index], 
-        state[action.index - 1], 
-        ...state.slice(action.index + 1)
+        ...state.slice(0, index - 1), 
+        item(state[index], action),
+        state[index - 1], 
+        ...state.slice(index + 1)
       ];
+    
     case C.MOVE_DOWN:
-      if (action.index >= state.length - 1) {
+      if (index >= state.length - 1) {
         return state;
       }
 
       return [
-        ...state.slice(0, action.index), 
-        state[action.index + 1], 
-        state[action.index], 
-        ...state.slice(action.index + 2)
+        ...state.slice(0, index), 
+        state[index + 1], 
+        item(state[index], action),
+        ...state.slice(index + 2)
       ];
+
     case C.CHANGE_DONE:
-      state[action.index] = item(state[action.index], action);
+      // set the item as done
+      state[index] = item(state[index], action);
+
+      // move it to the bottom
       if (action.done) {
         state = [
-          ...state.slice(0, action.index), 
-          ...state.slice(action.index + 1, action.index.length), 
-          state[action.index], 
+          ...state.slice(0, index), 
+          ...state.slice(index + 1, state.length), 
+          state[index], 
         ];
       }
       return state;
+
+    case C.CLEAR_MOVE:
+      state[index] = item(state[index], action);
+      return state;
+
+    case C.CLEAR_NEW:
+      return state.map((e) => item(e, action));
+
     case C.IMPORT_ITEMS:
       return action.items;
+
     default:
       return state;
   }
 }
 
+// called by items(), above, for a single item.
+// state refers to item: {description, done, etc.}
 export const item = (state = {}, action) => {
   switch (action.type) {
+
     case C.CHANGE_DONE:
       return {
         ...state,
+        justMoved: true,
         done: action.done,
       };
+
+    case C.MOVE_UP:
+    case C.MOVE_DOWN:
+    case C.MAKE_TOP:
+        return {
+        ...state,
+        justMoved: true,
+      };
+
+    case C.CLEAR_MOVE:
+      return {
+        ...state,
+        justMoved: false,
+        isNew: false,
+      };
+
+    case C.CLEAR_NEW:
+      return {
+        ...state,
+        isNew: false,
+      };
+
     default:
       return state;
   }
@@ -89,39 +142,39 @@ export const addItem = (description) => (
   }
 )
 
-export const deleteItem = (index) => (
+export const deleteItem = (id) => (
   {
     type: C.DELETE_ITEM,
-    index,
+    id,
   }
 )
 
-export const changeDone = (index, done) => (
+export const changeDone = (id, done) => (
   {
     type: C.CHANGE_DONE,
-    index,
+    id,
     done,
   }
 )
 
-export const makeTop = (index) => (
+export const makeTop = (id) => (
   {
     type: C.MAKE_TOP,
-    index,
+    id,
   }
 )
 
-export const moveUp = (index) => (
+export const moveUp = (id) => (
   {
     type: C.MOVE_UP,
-    index,
+    id,
   }
 )
 
-export const moveDown = (index) => (
+export const moveDown = (id) => (
   {
     type: C.MOVE_DOWN,
-    index,
+    id,
   }
 )
 
@@ -129,6 +182,19 @@ export const importItems = (items) => (
   {
     type: C.IMPORT_ITEMS,
     items,
+  }
+)
+
+export const clearMove = (id) => (
+  {
+    type: C.CLEAR_MOVE,
+    id,
+  }
+)
+
+export const clearNew = () => (
+  {
+    type: C.CLEAR_NEW,
   }
 )
 
