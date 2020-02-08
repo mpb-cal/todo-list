@@ -46,7 +46,7 @@ const ActionItemLayout = ({store}) => {
           let data = JSON.parse(reader.result);
           if (typeof data.items !== 'undefined') {
             let items = data.items;
-            console.log(data.items);
+            console.log(items);
             store.dispatch(importItems(items));
           }
         };
