@@ -34,13 +34,6 @@ const ActionItemLayout = ({store}) => {
     saveAs(blob, EXPORT_JSON_NAME);
   }
 
-  const submitAddItem = (e) => {
-    e.preventDefault();
-    store.dispatch(addItem(newItemRef.current.value));
-    setTimeout(() => {store.dispatch(clearNew())}, 1000);
-    newItemRef.current.value = '';
-  }
-
   const changeChooseFile = (e) => {
     let files = e.target.files;
     if (files.length > 0) {
@@ -51,7 +44,7 @@ const ActionItemLayout = ({store}) => {
         reader.onloadend = function () {
           console.log(reader.result);
           let data = JSON.parse(reader.result);
-          if (data.items !== 'undefined') {
+          if (typeof data.items !== 'undefined') {
             let items = data.items;
             console.log(data.items);
             store.dispatch(importItems(items));
@@ -59,6 +52,13 @@ const ActionItemLayout = ({store}) => {
         };
       }
     }
+  }
+
+  const submitAddItem = (e) => {
+    e.preventDefault();
+    store.dispatch(addItem(newItemRef.current.value));
+    setTimeout(() => {store.dispatch(clearNew())}, 1000);
+    newItemRef.current.value = '';
   }
 
   let newItemRef = React.createRef();
