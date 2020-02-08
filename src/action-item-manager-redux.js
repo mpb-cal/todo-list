@@ -123,20 +123,20 @@ const ActionItemList = ({store}) => (
 );
 
 const ActionItem = ({store, item, idx}) => (
-  <Form.Row className={"actionItemRow " + (item.done ? "font-weight-light" : "") + (item.isNew ? " new" : "") + (item.justMoved ? " justMoved" : "")} >
+  <Form.Row className={"actionItemRow " + (item.done ? "done " : "") + (item.isNew ? "new " : "") + (item.justMoved ? "justMoved " : "")} >
     <ActionButton store={store} item={item} text="Top" action={makeTop(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Up" action={moveUp(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Down" action={moveDown(item.id)} disabled={item.done} />
     <ActionButton store={store} item={item} text="Delete" action={deleteItem(item.id)} disabled={!item.done} />
     <Col className="d-print-none">
       <Form.Group>
-        <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => store.dispatch(changeDone(item.id, e.target.checked))} label="Done" />
+        <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => clickActionButton(store, changeDone(item.id, e.target.checked), item)} label="Done" />
       </Form.Group>
     </Col>
-    <Col xs={6} md={8} className="d-print-none">
+    <Col xs={6} md={8} className="d-print-none description">
       {item.description}
     </Col>
-    <Col xs={true} className="d-none d-print-block">
+    <Col xs={true} className="d-none d-print-block description">
       {item.description}
     </Col>
   </Form.Row>

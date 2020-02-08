@@ -3,14 +3,27 @@ button[disabled]:hover {
   cursor: default;
 }
 
-.new {
+.actionItemRow.new .description {
   background-color: lightgreen;
 }
 
-.justMoved {
+.actionItemRow.justMoved .description {
   background-color: aquamarine;
 }
 
-.actionItemRow:hover {
-  background-color: #ddd;
+.actionItemRow.justMoved.done .description {
+  background-color: lightcoral;
 }
+
+.actionItemRow .description {
+  transition: all 1s;
+}
+
+.actionItemRow:hover .description {
+  border: 1px solid lightskyblue;
+}
+
+.actionItemRow.done .description {
+  font-weight: 300 !important;
+}
+
