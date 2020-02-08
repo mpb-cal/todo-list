@@ -1,6 +1,10 @@
 
-button[disabled]:hover {
+button:disabled:hover {
   cursor: default;
+}
+
+.actionItemRow button:enabled:hover {
+  background-color: #ddd;
 }
 
 .actionItemRow.new .description {

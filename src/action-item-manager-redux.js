@@ -124,9 +124,9 @@ const ActionItemList = ({store}) => (
 
 const ActionItem = ({store, item, idx}) => (
   <Form.Row className={"actionItemRow " + (item.done ? "done " : "") + (item.isNew ? "new " : "") + (item.justMoved ? "justMoved " : "")} >
-    <ActionButton store={store} item={item} text="Top" action={makeTop(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Up" action={moveUp(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Down" action={moveDown(item.id)} disabled={item.done} />
+    <ActionButton store={store} item={item} text="Top" action={makeTop(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Delete" action={deleteItem(item.id)} disabled={!item.done} />
     <Col className="d-print-none">
       <Form.Group>
