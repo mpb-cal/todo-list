@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { saveAs } from 'file-saver';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
