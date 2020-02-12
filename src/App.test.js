@@ -14,7 +14,13 @@ it('renders without crashing (shallow test)', () => {
   shallow(<App />);
 });
 
-it('renders welcome message', () => {
+it('renders headline', () => {
   const { getByText } = render(<App />);
-  expect(getByText('Learn React')).toBeInTheDocument();
+  expect(getByText('TODO List')).toBeInTheDocument();
 });
+
+it('matches snapshots', () => {
+  const { container } = render(<App />);
+  expect(container).toMatchSnapshot();
+});
+
