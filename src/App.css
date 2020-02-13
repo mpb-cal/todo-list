@@ -1,10 +1,16 @@
 
-button:disabled:hover {
+button:disabled:hover,
+.btn:disabled:hover {
   cursor: default;
 }
 
-.actionItemRow button:enabled:hover {
-  background-color: #ddd;
+.actionItemRow button:enabled:hover,
+.actionItemRow .btn:enabled:hover {
+    background-color: #ddd;
+}
+
+.actionItemRow .done:hover {
+    background-color: lightcoral;
 }
 
 .actionItemRow.new .description {
@@ -19,8 +25,21 @@ button:disabled:hover {
   background-color: lightcoral;
 }
 
+.actionItemRow.done .description {
+  background-color: peachpuff;
+}
+
+.actionItemRow button,
+.actionItemRow .btn {
+  transition: none;
+}
+
 .actionItemRow .description {
-  transition: all 1s;
+  transition: background-color 1s;
+}
+
+.actionItemRow .description {
+  border: none;
 }
 
 .actionItemRow:hover .description {

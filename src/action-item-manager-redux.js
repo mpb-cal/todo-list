@@ -122,6 +122,11 @@ const ActionItemList = ({store}) => (
   </>
 );
 
+const clickActionButton = (store, action, item) => {
+  store.dispatch(action);
+  setTimeout(() => {store.dispatch(clearMove(item.id))}, 1000);
+}
+
 const ActionItem = ({store, item, idx}) => (
   <Form.Row className={"actionItemRow " + (item.done ? "done " : "") + (item.isNew ? "new " : "") + (item.justMoved ? "justMoved " : "")} >
     <ActionButton store={store} item={item} text="Up" action={moveUp(item.id)} disabled={item.done || idx < 1} />
@@ -129,7 +134,7 @@ const ActionItem = ({store, item, idx}) => (
     <ActionButton store={store} item={item} text="Top" action={makeTop(item.id)} disabled={item.done || idx < 1} />
     <ActionButton store={store} item={item} text="Delete" action={deleteItem(item.id)} disabled={!item.done} />
     <Col className="d-print-none">
-      <Form.Group>
+      <Form.Group className="done">
         <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => clickActionButton(store, changeDone(item.id, e.target.checked), item)} label="Done" />
       </Form.Group>
     </Col>
@@ -142,14 +147,9 @@ const ActionItem = ({store, item, idx}) => (
   </Form.Row>
 );
 
-const clickActionButton = (store, action, item) => {
-  store.dispatch(action);
-  setTimeout(() => {store.dispatch(clearMove(item.id))}, 1000);
-}
-
 const ActionButton = ({store, item, text, action, disabled}) => (
   <Col className="d-print-none">
-    <Button size="sm" variant="secondary" onClick={() => clickActionButton(store, action, item)} disabled={disabled}>
+    <Button size="sm" variant="success" onClick={() => clickActionButton(store, action, item)} disabled={disabled}>
      {text}
     </Button>
   </Col>
