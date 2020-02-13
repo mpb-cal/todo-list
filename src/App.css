@@ -1,16 +1,52 @@
 
-button[disabled]:hover {
+button:disabled:hover,
+.btn:disabled:hover {
   cursor: default;
 }
 
-.new {
+.actionItemRow button:enabled:hover,
+.actionItemRow .btn:enabled:hover {
+    background-color: #ddd;
+}
+
+.actionItemRow .done:hover {
+    background-color: lightcoral;
+}
+
+.actionItemRow.new .description {
   background-color: lightgreen;
 }
 
-.justMoved {
+.actionItemRow.justMoved .description {
   background-color: aquamarine;
 }
 
-.actionItemRow:hover {
-  background-color: #ddd;
+.actionItemRow.justMoved.done .description {
+  background-color: lightcoral;
 }
+
+.actionItemRow.done .description {
+  background-color: peachpuff;
+}
+
+.actionItemRow button,
+.actionItemRow .btn {
+  transition: none;
+}
+
+.actionItemRow .description {
+  transition: background-color 1s;
+}
+
+.actionItemRow .description {
+  border: none;
+}
+
+.actionItemRow:hover .description {
+  border: 1px solid lightskyblue;
+}
+
+.actionItemRow.done .description {
+  font-weight: 300 !important;
+}
+

@@ -1,0 +1,647 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshots 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="justify-content-center row"
+    >
+      <div
+        class="col-auto"
+      >
+        <h1
+          class="text-center"
+        >
+          TODO List
+        </h1>
+      </div>
+    </div>
+    <div
+      class="d-print-none row"
+    >
+      <div
+        class="col"
+      >
+        <button
+          class="mb-3 btn btn-primary"
+          type="button"
+        >
+          Export JSON
+        </button>
+        <form
+          class=""
+        >
+          <div
+            class="form-row"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="col"
+              >
+                Import JSON:
+              </div>
+              <div
+                class="col"
+              >
+                <input
+                  class="mb-3 form-control-file"
+                  type="file"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <form
+      class=""
+    >
+      <div
+        class="d-print-none form-row"
+      >
+        <div
+          class="col-10"
+        >
+          <div
+            class="form-group"
+          >
+            <input
+              class="form-control"
+              name="newItem"
+            />
+          </div>
+        </div>
+        <div
+          class="col-2"
+        >
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Add Item
+          </button>
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_0"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_0"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          use separate columns for table and id
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          use separate columns for table and id
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_1"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_1"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          eventually delete all history and comments columns
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          eventually delete all history and comments columns
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_2"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_2"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          AFI reports for Leif
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          AFI reports for Leif
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_3"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_3"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          add field for ticket number, link to ticket page
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          add field for ticket number, link to ticket page
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_4"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_4"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          add field for reported issue - see XLS for drop down options, ability to add new option
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          add field for reported issue - see XLS for drop down options, ability to add new option
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_5"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_5"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          button to create UPS return label
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          button to create UPS return label
+        </div>
+      </div>
+      <div
+        class="actionItemRow  form-row"
+      >
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Up
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Down
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-secondary btn-sm"
+            disabled=""
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="done_6"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="done_6"
+                title=""
+              >
+                Done
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-print-none col-md-8 col-6"
+        >
+          button to create UPS shipment
+        </div>
+        <div
+          class="d-none d-print-block col"
+        >
+          button to create UPS shipment
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

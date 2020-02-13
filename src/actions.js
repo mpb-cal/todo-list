@@ -17,15 +17,20 @@ const C = {
 
 // state refers to items[]
 export const items = (state = [], action) => {
-  let index = state.findIndex((e) => (e.id == action.id));
+  let index = state.findIndex((e) => (e.id === action.id));
 
   switch (action.type) {
 
     case C.ADD_ITEM:
+      let max = 0;
+      state.forEach((e, i, a) => {if (e.id > max) { max = e.id; }});
+      let newId = max + 1;
+
       let newItem = {
         description: action.description,
         done: action.done,
         isNew: true,
+        id: newId,
       };
 
       return [
