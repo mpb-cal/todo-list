@@ -157,7 +157,7 @@ const ActionItem = ({store, item, idx}) => (
         <Form.Check type="checkbox" checked={item.done} id={"done_" + idx} onChange={(e) => clickActionButton(store, changeDone(item.id, e.target.checked), item)} label="Done" />
       </Form.Group>
     </Col>
-    <Col xs={6} md={8} className="d-print-none description">
+    <Col xs={7} className="d-print-none description">
       {item.description}
     </Col>
     <Col xs={true} className="d-none d-print-block description">
@@ -167,7 +167,7 @@ const ActionItem = ({store, item, idx}) => (
 );
 
 const ActionButton = ({store, item, text, action, disabled}) => (
-  <Col className="d-print-none">
+  <Col xs="auto" className="d-print-none">
     <Button size="sm" variant="success" onClick={() => clickActionButton(store, action, item)} disabled={disabled}>
      {text}
     </Button>

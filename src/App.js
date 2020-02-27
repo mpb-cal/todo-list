@@ -9,7 +9,7 @@ import ActionItemManagerRedux from './action-item-manager-redux';
 const STORAGE_KEY = 'action-item-manager-state';
 
 function App() {
-  console.log(localStorage);
+  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
 
   const store = createStore(
     combineReducers({items}),
