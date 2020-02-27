@@ -10,6 +10,16 @@ import FormGroup from 'react-bootstrap/FormGroup';
 
 const EXPORT_JSON_NAME = "action-item-manager-state.json";
 
+const SAMPLE_ITEMS = [
+  {"description": "use separate columns for table and id", "done": false, id: 3},
+  {"description": "eventually delete all history and comments columns", "done": false, id: 33},
+  {"description": "AFI reports for Leif", "done": false, id: 44},
+  {"description": "add field for ticket number, link to ticket page", "done": false, id: 45},
+  {"description": "add field for reported issue - see XLS for drop down options, ability to add new option", "done": false, id: 47},
+  {"description": "button to create UPS return label", "done": false, id: 23},
+  {"description": "button to create UPS shipment", "done": false, id: 22},
+];
+
 export default class ActionItemManagerRedux extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +43,10 @@ const ActionItemLayout = ({store}) => {
     saveAs(blob, EXPORT_JSON_NAME);
   }
 
+  const loadSampleData = () => {
+    store.dispatch(importItems([...SAMPLE_ITEMS]));
+  }
+
   const changeChooseFile = (e) => {
     let files = e.target.files;
     if (files.length > 0) {
@@ -41,7 +55,6 @@ const ActionItemLayout = ({store}) => {
         let reader = new FileReader();
         reader.readAsText(file);
         reader.onloadend = function () {
-          console.log(reader.result);
           let data = JSON.parse(reader.result);
           if (typeof data.items !== 'undefined') {
             let items = data.items;
@@ -71,11 +84,18 @@ const ActionItemLayout = ({store}) => {
           </h1>
         </Col>
       </Row>
-      <Row className="d-print-none">
-        <Col>
+      <Row className="d-print-none justify-content-start">
+        <Col sm={2}>
           <Button onClick={clickExport} className="mb-3">
             Export JSON
           </Button>
+        </Col>
+        <Col sm={2}>
+          <Button onClick={loadSampleData} className="mb-3">
+            Load Sample Data
+          </Button>
+        </Col>
+        <Col>
           <Form className="">
             <Form.Row>
               <FormGroup>

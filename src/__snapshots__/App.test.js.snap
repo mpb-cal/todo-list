@@ -93,18 +93,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            disabled=""
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -115,7 +104,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -125,7 +114,18 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            disabled=""
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -136,7 +136,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -157,12 +157,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           use separate columns for table and id
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           use separate columns for table and id
         </div>
@@ -174,17 +174,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -194,7 +184,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -204,7 +194,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -215,7 +215,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -236,12 +236,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           eventually delete all history and comments columns
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           eventually delete all history and comments columns
         </div>
@@ -253,17 +253,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -273,7 +263,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -283,7 +273,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -294,7 +294,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -315,12 +315,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           AFI reports for Leif
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           AFI reports for Leif
         </div>
@@ -332,17 +332,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -352,7 +342,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -362,7 +352,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -373,7 +373,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -394,12 +394,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           add field for ticket number, link to ticket page
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           add field for ticket number, link to ticket page
         </div>
@@ -411,17 +411,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -431,7 +421,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -441,7 +431,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -452,7 +452,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -473,12 +473,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           add field for reported issue - see XLS for drop down options, ability to add new option
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           add field for reported issue - see XLS for drop down options, ability to add new option
         </div>
@@ -490,17 +490,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -510,7 +500,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -520,7 +510,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -531,7 +531,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -552,12 +552,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           button to create UPS return label
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           button to create UPS return label
         </div>
@@ -569,17 +569,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
-            type="button"
-          >
-            Top
-          </button>
-        </div>
-        <div
-          class="d-print-none col"
-        >
-          <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Up
@@ -589,7 +579,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
             type="button"
           >
             Down
@@ -599,7 +589,17 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <button
-            class="btn btn-secondary btn-sm"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+        <div
+          class="d-print-none col"
+        >
+          <button
+            class="btn btn-success btn-sm"
             disabled=""
             type="button"
           >
@@ -610,7 +610,7 @@ exports[`matches snapshots 1`] = `
           class="d-print-none col"
         >
           <div
-            class="form-group"
+            class="done form-group"
           >
             <div
               class="form-check"
@@ -631,12 +631,12 @@ exports[`matches snapshots 1`] = `
           </div>
         </div>
         <div
-          class="d-print-none col-md-8 col-6"
+          class="d-print-none description col-md-8 col-6"
         >
           button to create UPS shipment
         </div>
         <div
-          class="d-none d-print-block col"
+          class="d-none d-print-block description col"
         >
           button to create UPS shipment
         </div>
