@@ -13,7 +13,7 @@ function App() {
 
   const store = createStore(
     combineReducers({items}),
-      JSON.parse(localStorage.getItem(STORAGE_KEY)) || 
+    JSON.parse(localStorage.getItem(STORAGE_KEY)) || 
       {items:[]}
   );
 
